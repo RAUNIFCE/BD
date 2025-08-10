@@ -1,0 +1,23 @@
+select * from departamento;
+select * from funcionario;
+select * from projeto;
+insert into departamento values(NULL,"Tecnologia","Fortaleza CE");
+insert into departamento values(NULL,"Recursos Humanos","Recife PE");
+insert into departamento values(NULL,"Marketing","São Paulo SP");
+
+insert into Funcionario values(NULL,"Ana Oliveira","Admnistradora",5800,"2021-03-15",2);
+insert into Funcionario values(NULL,"Carlos Souza","Desenvolvedor Full",7000,"2022-06-01",1);
+insert into Funcionario values(NULL,"Mariana Freitas","Gerente de Projetos",9800,"2020-01-10",3);
+
+insert into projeto values(NULL,"Plataforma EduTech",2,"2023-01-10","2023-12-20");
+insert into projeto values(NULL,"Sistema RH Digital",1,"2023-05-01","2024-04-30");
+insert into projeto values(NULL,"Campanha SEO Global",3,"2024-01-15","2024-10-15");
+
+update funcionario set salario_func=6500 where id_func=1;
+update departamento set nome_dep="Marketing Digital" where id_dep=3;
+update departamento set localizacao_dep="Juazeiro do Norte CE" where id_dep=1;
+alter table funcionario add telefone int(11);
+alter table departamento add ramal_telefonico char(4);
+delete from funcionario where id_func=3;
+delete from projeto where id_prj=2;
+delete from departamento where id_dep=3;

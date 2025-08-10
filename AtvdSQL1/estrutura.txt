@@ -1,0 +1,26 @@
+create database Empresa
+USE Empresa
+create table Departamento(
+id_dep int primary key auto_increment,
+nome_dep varchar(200) not null,
+localizacao_dep varchar(200) not null
+);
+create table Funcionario(
+id_func int primary key auto_increment,
+nome_func varchar(200) not null,
+cargo_func varchar(50) not null,
+salario_func float,
+data_contratacao date,
+id_departamento int,
+constraint fkDepartamento foreign key(id_departamento) references
+Departamento(id_dep) on delete set null on update cascade
+);
+create table Projeto(
+id_prj int primary key auto_increment,
+nome_prj varchar(200) not null,
+id_funcionario int,
+data_inicio date,
+data_final date,
+constraint fkid_funcionario foreign key(id_funcionario) references
+Funcionario(id_func) on delete set null on update cascade
+);
