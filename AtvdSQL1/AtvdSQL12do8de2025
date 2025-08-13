@@ -1,0 +1,57 @@
+Estrutura Atividade SQL 12/08/2025
+#1º Questão
+create database Mercado
+USE Mercado
+create table Categoria(
+id_categoria int primary key auto_increment,
+nome_categoria varchar(50) not null unique
+);
+create table Fornecedor(
+id_fornecedor int primary key auto_increment,
+nome_fornecedor varchar(100) not null,
+telefone varchar(15),
+cidade  varchar(50)
+);
+create table Produto(
+id_produto int primary key auto_increment,
+nome_produto  varchar(100) not null,
+preco decimal(10,2) not null check(preco>0),
+estoque int not null default 0,
+id_categoria int ,
+constraint fkCategoria foreign key(id_categoria) references
+Categoria(id_categoria) on delete set null on update cascade,
+id_fornecedor int ,
+constraint fkFornecedor foreign key(id_fornecedor) references
+Fornecedor(id_fornecedor) on delete set null on update cascade
+);
+create table Cliente(
+id_cliente int primary key auto_increment,
+nome_cliente varchar(100) not null,
+telefone varchar(15),
+email varchar(100) not null unique
+);
+create table Venda(
+id_venda int primary key auto_increment,
+data_venda datetime not null,
+id_cliente int,
+constraint fkCliente foreign key(id_cliente) references
+Cliente(id_cliente) on delete set null on update cascade
+);
+create table Item_Venda(
+id_item int primary key auto_increment,
+quantidade int not null check(quantidade>0),
+preco_unitario decimal(10,2) not null check(preco_unitario>0),
+id_venda int,
+id_produto int,
+constraint fkVenda foreign key(id_venda) references
+Venda(id_venda) on delete set null on update cascade,
+constraint fkProduto foreign key(id_produto) references
+Produto(id_produto) on delete set null on update cascade
+);
+
+
+
+
+
+
+
