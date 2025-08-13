@@ -49,6 +49,23 @@ constraint fkProduto foreign key(id_produto) references
 Produto(id_produto) on delete set null on update cascade
 );
 
+#2 inserção de dados
+select * from item_venda;
+insert into Categoria VALUES(NULL,"Bebidas");
+insert into Categoria VALUES(NULL,"Hortifruti");
+
+insert into Fornecedor values(NULL,"Distribuidora Água Viva","(88)99999-1111","Cedro");
+insert into Fornecedor values(NULL,"Hortifruti Ceará","(88)98888-2222","Icó");
+
+insert into Produto values(NULL,"Água Mineral 500ml", 2.50, 100, 1, 1),(NULL,"Banana Nanica",5.00, 50, 2, 2);
+
+insert into Cliente values(NULL,"Maria Souza","(88) 97777-3333","maria.souza@email.com"),
+(NULL,"João Pereira", "(88)96666-4444","joao.pereira@email.com");
+
+insert into Venda values(NULL,"2025-08-12",1),(NULL,"2025-08-12",2);
+
+insert into Item_Venda values(NULL,2,2.5,1,1);
+insert into Item_Venda values(NULL,3,5,2,2);
 
 
 
