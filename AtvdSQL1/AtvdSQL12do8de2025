@@ -68,6 +68,11 @@ insert into Item_Venda values(NULL,2,2.5,1,1);
 insert into Item_Venda values(NULL,3,5,2,2);
 
 
+#3
+update produto set preco=preco*1.1 where id_produto=1;
+update produto set estoque=0 where id_categoria=2; 
+update Fornecedor set telefone="(88)99999-5555" where id_fornecedor=2; 
+
 
 
 
