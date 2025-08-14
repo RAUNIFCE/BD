@@ -1,0 +1,26 @@
+select nome from tbtitulo;
+select nomedistribuidor from tbFilme where nomedistribuidor="A2 Filmes";
+select * from tbCliente where cidade="Cedro";
+select cpf,nome from tbCliente;
+select * from tbEmprestimo where valor_multa>10;
+select * from tbEmprestimo where valor_multa<=10 and valor_multa>5;
+
+select * from tbCliente where cidade="Cedro";
+select * from tbclasse;
+select nomeClasse from tbclasse where valor>=15;
+select * from tbcategoria;
+select * from tbEmprestimo where valor_multa<15 and valor_multa>5;
+select data_emprestimo,data_dev_prevista,data_dev_efetiva from tbEmprestimo where valor_multa=5 or valor_multa>10;
+select codCategoria from tbtitulo;
+select distinct cidade from tbCliente;
+select nomeclasse as classificação,format(valor*0.75,2) as "valor com Desconto" from tbclasse  where codClasse=2;
+select nomeclasse as classificação,format(valor*0.75,2) as "valor com Desconto" from tbclasse as c where c.codClasse=2;
+/*Selecione na tabela tb titulos o nome do titulo e ano.
+aprsente os dados como nome do filme e ano de lançamento respectivamente
+*/
+select nome as "Nome do Filme",ano as"Ano de Lançamento" from tbtitulo;
+select nome Cliente ,cpf CPF,data_cadastro Cadastro from tbcliente;
+select nomeClasse Classificação,valor as "Valor Atual",format(valor*0.85,2) as "valor com promocional" from tbclasse;
+select nome,data_cadastro from tbcliente where data_cadastro between "2022-01-01" and "2022-01-31";
+select nome,data_cadastro from tbcliente where data_cadastro not between "2022-01-01" and "2022-01-31";
+select nome,data_cadastro from tbcliente where data_cadastro between "2023-01-01" and "2023-12-31";
