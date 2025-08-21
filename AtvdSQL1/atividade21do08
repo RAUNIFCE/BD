@@ -1,0 +1,15 @@
+select * from Categoria;
+select nome,telefone from fornecedores;
+select  idVenda, idCliente, dataVenda, ValorTotal from vendas;
+select telefone,idFornecedor from fornecedores where nome='Limpeza Boa';
+select  * from vendas where ValorTotal>=100;
+select  * from vendas where dataVenda='2025-03-09';
+select  * from vendas where dataVenda between "2025-04-01" and "2025-04-30";
+select * from itens_venda where quantidade>10;
+select * from itens_venda where idProduto=5;
+select idVenda,ValorTotal,format(ValorTotal*0.90,2) desconto from vendas; 
+select idVenda,ValorTotal,ValorTotal+15 as 'taxa fixa' from vendas where ValorTotal between 50 and 100; 
+select idItem,idVenda,quantidade,quantidade*2  from itens_venda where quantidade between 2 and 5; 
+select distinct dataVenda  from vendas where dataVenda between "2025-01-01" and "2025-03-31";
+select idFornecedor,nome from fornecedores where idFornecedor between 5 AND 15;
+select * from vendas where dataVenda between "2025-01-01" and "2025-03-31";
