@@ -1,0 +1,35 @@
+select nome,ano from tbtitulo where nome like 'I%';
+/*mostra os filmes que começam com i				*/
+select nome,ano from tbtitulo where nome like '%a';
+/*mostra os filmes que terminam com a*/
+select nome,ano from tbtitulo where nome like '%para%';
+/*mostra os filmes que tem a palavra para no nome*/
+
+# selecione o nome dos clientes que possuem sobrenome castro
+select nome from tbcliente where nome like '%castro%';
+#selecione o nome dos clientes que começam com letra L
+select nome from tbcliente where nome like 'L%';
+
+select nome from tbcliente where nome like '____________';
+
+#selecione filmes que tenham cavaleiro
+select nome,ano from tbtitulo where nome like '%cavaleiro%';
+#selecione todos os filmes que começam com a letra B
+select nome,ano from tbtitulo where nome like 'B%';
+#selecione todos os filmes que terminam com a letra O
+select nome,ano from tbtitulo where nome like '%O';
+#selecione todos os filmes que começa com i e terminam com o
+select nome,ano from tbtitulo where nome like 'I%O';
+# selecione todos os clientes que possuem sobrenome castro
+select nome from tbcliente where nome like '%castro%';
+# selecione todos os clientes que possuem nome Maria
+select nome from tbcliente where nome like '%maria%';
+# selecione todos os clientes que começam com a letra L 
+select nome from tbcliente where nome like 'L%';
+#comando join
+select t.nome,c.nomeClasse from tbtitulo as t inner join
+tbclasse as c on t.codClasse = c.codClasse;
+
+#Quero o nome do titulo e sua respectiva categoria
+select t.nome,c.nomeCategoria from tbtitulo as t inner join
+tbcategoria as c on t.codCategoria = c.codCategoria;
