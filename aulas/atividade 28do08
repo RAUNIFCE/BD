@@ -1,0 +1,22 @@
+select nome,telefone from fornecedores where nome like 'L%';
+select * from clientes where nome like 'A%';
+select * from produtos where valor_unitario between 10 and 20;
+select * from clientes where telefone like '%05';
+select * from clientes where endereco like '%Rua%';
+select * from produtos where nome like '%Sab%';
+select * from produtos where nome like 'b%' and valor_unitario<30;
+select * from vendas where dataVenda between "2025-05-01" and "2025-05-31" and ValorTotal >100 ;
+select * from produtos where estoque between 20 and 60;
+select * from fornecedores where nome like 'D%o';
+select * from produtos where valor_unitario between 5 and 10 and nome like '%a%';
+select * from clientes where nome like '%Silva%' or 'Souza';
+select * from produtos where estoque>80 and valor_unitario>20;
+#14
+select p.nome,c.nome from produtos as p inner join
+categoria as c on p.idCategoria = c.idCategoria;
+#15
+select p.nome as 'Nome do produto',f.nome as 'Nome do Fornecedor' from produtos as p inner join
+fornecedores as f on p.idFornecedor = f.idFornecedor;
+#16
+select c.nome as 'Nome do Cliente',v.dataVenda as 'Data da venda',v.ValorTotal from clientes as c inner join
+vendas as v on c.idCliente = v.idCliente;
