@@ -1,0 +1,18 @@
+#aula 2 de setembro
+select t.nome,cl.nomeClasse from tbtitulo t inner join tbclasse cl on t.codClasse=cl.codClasse;
+
+select t.nome,cl.nomeClasse,c.nomeCategoria 
+from tbtitulo t inner join tbclasse cl on t.codClasse=cl.codClasse
+ inner join tbcategoria c on t.codCategoria=c.codCategoria;
+ 
+ select c.nome,f.nomeDistribuidor,e.data_emprestimo from tbcliente c 
+ inner join tbemprestimo e on c.codCliente=e.codCliente 
+ inner join tbfilme f on f.codFilme=e.codFilme;
+ 
+ select f.nomeDistribuidor,t.nome,t.ano from tbtitulo t 
+ inner join tbfilme f on f.codTitulo=t.codTitulo where t.ano 
+ between "2022-01-01" and "2022-12-31";
+ 
+ select t.nome,ct.nomeCategoria,cl.nomeClasse,cl.valor from tbclasse cl 
+ inner join tbtitulo t on  cl.codClasse=t.codClasse 
+ inner join tbcategoria ct on ct.codCategoria=t.codCategoria where t.ano  between "2000-01-01" and "2010-12-31";
