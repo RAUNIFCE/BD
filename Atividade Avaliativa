@@ -1,0 +1,57 @@
+#1
+select p.nome,ct.nome,f.nome from produtos p
+ inner join categoria ct on  ct.idCategoria=p.idCategoria
+ inner join fornecedores  f on f.idFornecedor=p.idFornecedor ;
+ #2
+select c.nome,v.dataVenda,v.ValorTotal from clientes c
+ inner join vendas v on  v.idCliente =c.idCliente  where v.dataVenda between '2025-01-01' and '2025-03-31' ;
+ #3
+ select p.nome,f.nome from produtos p
+ inner join categoria ct on  ct.idCategoria=p.idCategoria
+ inner join fornecedores  f on f.idFornecedor=p.idFornecedor where f.nome like '%Distribuidora%' ;
+ #4
+ select c.nome,v.ValorTotal from clientes c
+ inner join vendas v on  v.idCliente =c.idCliente  where v.ValorTotal>200  ;
+ #5
+ select p.nome,ct.nome,p.valor_unitario from produtos p
+ inner join categoria ct on  ct.idCategoria=p.idCategoria where p.valor_unitario between 5 and 15 ;
+ #6
+ select distinct c.nome,ct.nome from clientes c 
+ inner join vendas v on  v.idCliente =c.idCliente  
+ inner join itens_venda iv on iv.idVenda=v.idVenda
+ inner join produtos p on iv.idProduto=p.idProduto
+ inner join categoria ct on p.idCategoria=ct.idCategoria where ct.nome like '%Frutas%';
+ #7
+ select c.nome,v.dataVenda,format(iv.quantidade*p.valor_unitario,2) from clientes c 
+ inner join vendas v on  v.idCliente =c.idCliente  
+ inner join itens_venda iv on iv.idVenda=v.idVenda
+ inner join produtos p on iv.idProduto=p.idProduto
+ inner join categoria ct on p.idCategoria=ct.idCategoria;
+ #8
+ select p.nome,ct.nome,p.estoque from produtos p 
+ inner join categoria ct on p.idCategoria=ct.idCategoria where p.estoque<50;
+ #9
+ select f.nome,p.nome,f.telefone from fornecedores f
+ inner join produtos p on f.idFornecedor=p.idFornecedor where f.telefone like '8599999%';
+ #10
+ select c.nome,v.dataVenda,ct.nome from clientes c 
+ inner join vendas v on  v.idCliente =c.idCliente  
+ inner join itens_venda iv on iv.idVenda=v.idVenda
+ inner join produtos p on iv.idProduto=p.idProduto
+ inner join categoria ct on p.idCategoria=ct.idCategoria where ct.nome like '%Bebidas%' ;
+ #11
+ select p.nome,f.nome,p.valor_unitario from fornecedores f
+ inner join produtos p on f.idFornecedor=p.idFornecedor where p.nome like '%doce%' ;
+ #12
+ select c.nome,iv.quantidade from clientes c 
+ inner join vendas v on  v.idCliente =c.idCliente  
+ inner join itens_venda iv on iv.idVenda=v.idVenda
+ inner join produtos p on iv.idProduto=p.idProduto where iv.quantidade>5 ;
+ #13
+ select p.nome,ct.nome,v.ValorTotal from vendas v
+ inner join itens_venda iv on iv.idVenda=v.idVenda
+ inner join produtos p on iv.idProduto=p.idProduto
+ inner join categoria ct on p.idCategoria=ct.idCategoria where v.ValorTotal>100;
+ 
+ 
+ 
